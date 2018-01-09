@@ -1,0 +1,46 @@
+//gcc -pthread -o singlePhaseForward singlePhaseForward.c -lpigpiod_if2
+
+#include <stdio.h>
+#include <pigpiod_if2.h>
+#include <stdbool.h>
+
+#define PHASE1 27
+#define PHASE2 22
+#define PHASE3 18
+#define PHASE4 17
+
+#define OFF 0
+#define ON 1
+#define noOfSteps 2048
+void oneCycle(int fd);
+int phases[4]={PHASE1,PHASE2,PHASE3,PHASE4};
+bool stepSequence[4][4]={  {1,0,0,0},
+			   {0,1,0,0},
+			   {0,0,1,0},
+			   {0,0,0,1},
+			      };
+
+int main(int argc,char **argv){
+  //int i;
+  int fd=-1;
+ 
+
+  if((fd=pigpio_start(NULL,NULL))<0){
+    printf("singlePhaseForward: could not open connection\n");
+    printf("%s\n",pigpio_error(fd));
+    return -1;
+  }
+  printf("Connection successfully opened.\n");
+   oneCycle(fd);
+   //gpio_write(fd,PHASE1,0);
+  
+  return 0;
+}
+
+void oneCycle(int fd){
+  int i,j;
+  for(i=0;i<8;i++){
+    for(j=0;j<4;j++){
+      gpio_write(fd,phases[j],stepSequence[i][j]);
+      time_sleep(0.25);}
+  }} 

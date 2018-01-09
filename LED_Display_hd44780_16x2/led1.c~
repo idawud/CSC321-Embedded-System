@@ -1,0 +1,16 @@
+#include <stdio.h>
+#include <pigpiod_if2.h>
+
+int main(){
+  int retcode;
+      //connection to pigpiod_i2f library  
+     if( (retcode=pigpio_start(NULL,NULL)) <0) {
+	printf("LED Usage: Could not open connection to pigiod \n");
+
+	return -1;
+     }
+     else{
+     printf("LED: pigpio Started successfully \n ");
+    }
+  return 0;
+}

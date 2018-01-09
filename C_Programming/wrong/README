@@ -1,0 +1,7 @@
+As the name of this directory indicates, there is something wrong with this
+attempt to calculate the Fibonacci numbers. You can try to compile the program
+(it will compile with no errors) and run it.
+If it does not crash it will in any case not calculate the Fibonacci series
+if you are not extremely lucky.
+I wrote this program to allow you playing with a debugger which should allow
+to finde the bug, but maybe you see it by just looking at the code?

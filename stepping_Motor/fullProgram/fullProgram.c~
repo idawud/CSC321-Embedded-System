@@ -1,0 +1,14 @@
+#include <stdlib.>
+#include <stdio.h>
+#include <getopt.h>
+
+  static struct option long_options[] = {
+                   {"help",              required_argument, NULL,  '?' },
+                   {"clockwise",         no_argument,       NULL,  'c'},
+                   {"counterclockwise",  required_argument, NULL,  'b' },
+                   {"noOfsteps",         no_argument,       NULL,  0 },
+                   {"velocity",          required_argument, NULL, 'c'},
+                   {"halfstep",          no_argument, NULL,  0 },
+		   {"fullstep",          no_argument, NULL,  0 },
+                   {NULL,0,   NULL      0,              }
+               };

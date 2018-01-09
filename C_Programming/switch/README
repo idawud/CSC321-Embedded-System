@@ -1,0 +1,8 @@
+You must understand what switch.c does!
+switch-1.c is quite a bit more tricky and maybe goes beyond what you have
+learned so far. ... since you are all expert C++ programmers you may actually
+understand the code. If after trying hard you do not understand then just
+forget about. At the end of the semester you will understand!
+If you know what a Makefile is then you may try to understand what I do in
+there, if not you will have to wait until the next lecture, where I will explain
+make and Makefiles.

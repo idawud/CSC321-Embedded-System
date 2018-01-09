@@ -1,0 +1,7 @@
+#!/bin/bash
+$PIN 0 
+while true;do
+    gpio write $PIN 1
+    sleep 5
+    gpio Write $PIN 0
+done

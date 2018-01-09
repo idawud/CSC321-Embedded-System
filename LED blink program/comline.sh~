@@ -1,0 +1,6 @@
+#!/bin/bash
+echo The number of arguments is $#
+for var in "$@"
+	   echo $var
+done
+	   
